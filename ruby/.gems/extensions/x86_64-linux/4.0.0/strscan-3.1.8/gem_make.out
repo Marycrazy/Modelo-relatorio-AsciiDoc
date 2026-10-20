@@ -1,0 +1,23 @@
+current directory: /docs/ruby/.gems/gems/strscan-3.1.8/ext/strscan
+/nix/store/svh0y2m2z99gldl7rfaf4zdphw0j6qpg-ruby-4.0.5/bin/ruby extconf.rb
+checking for onig_region_memsize(NULL)... no
+checking for rb_reg_onig_match() in ruby/re.h... yes
+checking for rb_deprecate_constant()... yes
+checking for rb_gc_location() in ruby.h... yes
+checking for RUBY_TYPED_EMBEDDABLE in ruby.h... yes
+creating Makefile
+
+current directory: /docs/ruby/.gems/gems/strscan-3.1.8/ext/strscan
+make DESTDIR\= sitearchdir\=./.gem.20260608-154-81lo0m sitelibdir\=./.gem.20260608-154-81lo0m clean
+
+current directory: /docs/ruby/.gems/gems/strscan-3.1.8/ext/strscan
+make DESTDIR\= sitearchdir\=./.gem.20260608-154-81lo0m sitelibdir\=./.gem.20260608-154-81lo0m
+compiling strscan.c
+linking shared-object strscan.so
+
+current directory: /docs/ruby/.gems/gems/strscan-3.1.8/ext/strscan
+make DESTDIR\= sitearchdir\=./.gem.20260608-154-81lo0m sitelibdir\=./.gem.20260608-154-81lo0m install
+install -c -p -m 755 strscan.so ./.gem.20260608-154-81lo0m
+
+current directory: /docs/ruby/.gems/gems/strscan-3.1.8/ext/strscan
+make DESTDIR\= sitearchdir\=./.gem.20260608-154-81lo0m sitelibdir\=./.gem.20260608-154-81lo0m clean

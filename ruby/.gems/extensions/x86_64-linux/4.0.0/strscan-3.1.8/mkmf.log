@@ -1,0 +1,128 @@
+have_func: checking for onig_region_memsize(NULL)... -------------------- no
+
+LD_LIBRARY_PATH=.:/nix/store/svh0y2m2z99gldl7rfaf4zdphw0j6qpg-ruby-4.0.5/lib LSAN_OPTIONS=detect_leaks=0 "gcc -o conftest -I/nix/store/svh0y2m2z99gldl7rfaf4zdphw0j6qpg-ruby-4.0.5/include/ruby-4.0.0/x86_64-linux -I/nix/store/svh0y2m2z99gldl7rfaf4zdphw0j6qpg-ruby-4.0.5/include/ruby-4.0.0/ruby/backward -I/nix/store/svh0y2m2z99gldl7rfaf4zdphw0j6qpg-ruby-4.0.5/include/ruby-4.0.0 -I.    -O3 -fPIC conftest.c -L. -L/nix/store/svh0y2m2z99gldl7rfaf4zdphw0j6qpg-ruby-4.0.5/lib -Wl,-rpath,/nix/store/svh0y2m2z99gldl7rfaf4zdphw0j6qpg-ruby-4.0.5/lib -L. -fstack-protector-strong -rdynamic -Wl,-export-dynamic -Wl,--no-as-needed     -Wl,-rpath,/nix/store/svh0y2m2z99gldl7rfaf4zdphw0j6qpg-ruby-4.0.5/lib -L/nix/store/svh0y2m2z99gldl7rfaf4zdphw0j6qpg-ruby-4.0.5/lib -lruby-4.0.5  -lm -lpthread  -lc"
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: int main(int argc, char **argv)
+4: {
+5:   return !!argv[argc];
+6: }
+/* end */
+
+LD_LIBRARY_PATH=.:/nix/store/svh0y2m2z99gldl7rfaf4zdphw0j6qpg-ruby-4.0.5/lib LSAN_OPTIONS=detect_leaks=0 "gcc -o conftest -I/nix/store/svh0y2m2z99gldl7rfaf4zdphw0j6qpg-ruby-4.0.5/include/ruby-4.0.0/x86_64-linux -I/nix/store/svh0y2m2z99gldl7rfaf4zdphw0j6qpg-ruby-4.0.5/include/ruby-4.0.0/ruby/backward -I/nix/store/svh0y2m2z99gldl7rfaf4zdphw0j6qpg-ruby-4.0.5/include/ruby-4.0.0 -I.    -O3 -fPIC conftest.c -L. -L/nix/store/svh0y2m2z99gldl7rfaf4zdphw0j6qpg-ruby-4.0.5/lib -Wl,-rpath,/nix/store/svh0y2m2z99gldl7rfaf4zdphw0j6qpg-ruby-4.0.5/lib -L. -fstack-protector-strong -rdynamic -Wl,-export-dynamic -Wl,--no-as-needed     -Wl,-rpath,/nix/store/svh0y2m2z99gldl7rfaf4zdphw0j6qpg-ruby-4.0.5/lib -L/nix/store/svh0y2m2z99gldl7rfaf4zdphw0j6qpg-ruby-4.0.5/lib -lruby-4.0.5  -lm -lpthread  -lc"
+conftest.c: In function 't':
+conftest.c:15:15: error: implicit declaration of function 'onig_region_memsize' [-Wimplicit-function-declaration]
+   15 | int t(void) { onig_region_memsize(NULL); return 0; }
+      |               ^~~~~~~~~~~~~~~~~~~
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     int (* volatile tp)(void)=(int (*)(void))&t;
+ 9:     printf("%d", (*tp)());
+10:   }
+11: 
+12:   return !!argv[argc];
+13: }
+14: 
+15: int t(void) { onig_region_memsize(NULL); return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for rb_reg_onig_match() in ruby/re.h... -------------------- yes
+
+LD_LIBRARY_PATH=.:/nix/store/svh0y2m2z99gldl7rfaf4zdphw0j6qpg-ruby-4.0.5/lib LSAN_OPTIONS=detect_leaks=0 "gcc -o conftest -I/nix/store/svh0y2m2z99gldl7rfaf4zdphw0j6qpg-ruby-4.0.5/include/ruby-4.0.0/x86_64-linux -I/nix/store/svh0y2m2z99gldl7rfaf4zdphw0j6qpg-ruby-4.0.5/include/ruby-4.0.0/ruby/backward -I/nix/store/svh0y2m2z99gldl7rfaf4zdphw0j6qpg-ruby-4.0.5/include/ruby-4.0.0 -I.    -O3 -fPIC conftest.c -L. -L/nix/store/svh0y2m2z99gldl7rfaf4zdphw0j6qpg-ruby-4.0.5/lib -Wl,-rpath,/nix/store/svh0y2m2z99gldl7rfaf4zdphw0j6qpg-ruby-4.0.5/lib -L. -fstack-protector-strong -rdynamic -Wl,-export-dynamic -Wl,--no-as-needed     -Wl,-rpath,/nix/store/svh0y2m2z99gldl7rfaf4zdphw0j6qpg-ruby-4.0.5/lib -L/nix/store/svh0y2m2z99gldl7rfaf4zdphw0j6qpg-ruby-4.0.5/lib -lruby-4.0.5  -lm -lpthread  -lc"
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: #include <ruby/re.h>
+ 4: 
+ 5: /*top*/
+ 6: extern int t(void);
+ 7: int main(int argc, char **argv)
+ 8: {
+ 9:   if (argc > 1000000) {
+10:     int (* volatile tp)(void)=(int (*)(void))&t;
+11:     printf("%d", (*tp)());
+12:   }
+13: 
+14:   return !!argv[argc];
+15: }
+16: int t(void) { void ((*volatile p)()); p = (void ((*)()))rb_reg_onig_match; return !p; }
+/* end */
+
+--------------------
+
+have_func: checking for rb_deprecate_constant()... -------------------- yes
+
+LD_LIBRARY_PATH=.:/nix/store/svh0y2m2z99gldl7rfaf4zdphw0j6qpg-ruby-4.0.5/lib LSAN_OPTIONS=detect_leaks=0 "gcc -o conftest -I/nix/store/svh0y2m2z99gldl7rfaf4zdphw0j6qpg-ruby-4.0.5/include/ruby-4.0.0/x86_64-linux -I/nix/store/svh0y2m2z99gldl7rfaf4zdphw0j6qpg-ruby-4.0.5/include/ruby-4.0.0/ruby/backward -I/nix/store/svh0y2m2z99gldl7rfaf4zdphw0j6qpg-ruby-4.0.5/include/ruby-4.0.0 -I.    -O3 -fPIC conftest.c -L. -L/nix/store/svh0y2m2z99gldl7rfaf4zdphw0j6qpg-ruby-4.0.5/lib -Wl,-rpath,/nix/store/svh0y2m2z99gldl7rfaf4zdphw0j6qpg-ruby-4.0.5/lib -L. -fstack-protector-strong -rdynamic -Wl,-export-dynamic -Wl,--no-as-needed     -Wl,-rpath,/nix/store/svh0y2m2z99gldl7rfaf4zdphw0j6qpg-ruby-4.0.5/lib -L/nix/store/svh0y2m2z99gldl7rfaf4zdphw0j6qpg-ruby-4.0.5/lib -lruby-4.0.5  -lm -lpthread  -lc"
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     int (* volatile tp)(void)=(int (*)(void))&t;
+ 9:     printf("%d", (*tp)());
+10:   }
+11: 
+12:   return !!argv[argc];
+13: }
+14: int t(void) { void ((*volatile p)()); p = (void ((*)()))rb_deprecate_constant; return !p; }
+/* end */
+
+--------------------
+
+have_func: checking for rb_gc_location() in ruby.h... -------------------- yes
+
+LD_LIBRARY_PATH=.:/nix/store/svh0y2m2z99gldl7rfaf4zdphw0j6qpg-ruby-4.0.5/lib LSAN_OPTIONS=detect_leaks=0 "gcc -o conftest -I/nix/store/svh0y2m2z99gldl7rfaf4zdphw0j6qpg-ruby-4.0.5/include/ruby-4.0.0/x86_64-linux -I/nix/store/svh0y2m2z99gldl7rfaf4zdphw0j6qpg-ruby-4.0.5/include/ruby-4.0.0/ruby/backward -I/nix/store/svh0y2m2z99gldl7rfaf4zdphw0j6qpg-ruby-4.0.5/include/ruby-4.0.0 -I.    -O3 -fPIC conftest.c -L. -L/nix/store/svh0y2m2z99gldl7rfaf4zdphw0j6qpg-ruby-4.0.5/lib -Wl,-rpath,/nix/store/svh0y2m2z99gldl7rfaf4zdphw0j6qpg-ruby-4.0.5/lib -L. -fstack-protector-strong -rdynamic -Wl,-export-dynamic -Wl,--no-as-needed     -Wl,-rpath,/nix/store/svh0y2m2z99gldl7rfaf4zdphw0j6qpg-ruby-4.0.5/lib -L/nix/store/svh0y2m2z99gldl7rfaf4zdphw0j6qpg-ruby-4.0.5/lib -lruby-4.0.5  -lm -lpthread  -lc"
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: #include <ruby.h>
+ 4: 
+ 5: /*top*/
+ 6: extern int t(void);
+ 7: int main(int argc, char **argv)
+ 8: {
+ 9:   if (argc > 1000000) {
+10:     int (* volatile tp)(void)=(int (*)(void))&t;
+11:     printf("%d", (*tp)());
+12:   }
+13: 
+14:   return !!argv[argc];
+15: }
+16: int t(void) { void ((*volatile p)()); p = (void ((*)()))rb_gc_location; return !p; }
+/* end */
+
+--------------------
+
+have_const: checking for RUBY_TYPED_EMBEDDABLE in ruby.h... -------------------- yes
+
+LD_LIBRARY_PATH=.:/nix/store/svh0y2m2z99gldl7rfaf4zdphw0j6qpg-ruby-4.0.5/lib LSAN_OPTIONS=detect_leaks=0 "gcc -I/nix/store/svh0y2m2z99gldl7rfaf4zdphw0j6qpg-ruby-4.0.5/include/ruby-4.0.0/x86_64-linux -I/nix/store/svh0y2m2z99gldl7rfaf4zdphw0j6qpg-ruby-4.0.5/include/ruby-4.0.0/ruby/backward -I/nix/store/svh0y2m2z99gldl7rfaf4zdphw0j6qpg-ruby-4.0.5/include/ruby-4.0.0 -I.    -O3 -fPIC   -c conftest.c"
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: #include <ruby.h>
+4: 
+5: /*top*/
+6: typedef int conftest_type;
+7: conftest_type conftestval = (int)RUBY_TYPED_EMBEDDABLE;
+/* end */
+
+--------------------
+

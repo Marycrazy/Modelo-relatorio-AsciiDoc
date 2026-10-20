@@ -1,0 +1,41 @@
+pkg_config: checking for pkg-config for GraphicsMagickWand... -------------------- ["-I/nix/store/zysg2m9jqvnjfh4r0cbdmwz65lxgxinx-graphicsmagick-1.3.47/include/GraphicsMagick ", "-L/nix/store/zysg2m9jqvnjfh4r0cbdmwz65lxgxinx-graphicsmagick-1.3.47/lib", "-lGraphicsMagickWand -lGraphicsMagick"]
+
+LD_LIBRARY_PATH=.:/nix/store/svh0y2m2z99gldl7rfaf4zdphw0j6qpg-ruby-4.0.5/lib LSAN_OPTIONS=detect_leaks=0 pkg-config --exists GraphicsMagickWand
+LD_LIBRARY_PATH=.:/nix/store/svh0y2m2z99gldl7rfaf4zdphw0j6qpg-ruby-4.0.5/lib LSAN_OPTIONS=detect_leaks=0 pkg-config --libs GraphicsMagickWand |
+=> "-L/nix/store/zysg2m9jqvnjfh4r0cbdmwz65lxgxinx-graphicsmagick-1.3.47/lib -lGraphicsMagickWand -lGraphicsMagick\n"
+LD_LIBRARY_PATH=.:/nix/store/svh0y2m2z99gldl7rfaf4zdphw0j6qpg-ruby-4.0.5/lib LSAN_OPTIONS=detect_leaks=0 "gcc -o conftest -I/nix/store/svh0y2m2z99gldl7rfaf4zdphw0j6qpg-ruby-4.0.5/include/ruby-4.0.0/x86_64-linux -I/nix/store/svh0y2m2z99gldl7rfaf4zdphw0j6qpg-ruby-4.0.5/include/ruby-4.0.0/ruby/backward -I/nix/store/svh0y2m2z99gldl7rfaf4zdphw0j6qpg-ruby-4.0.5/include/ruby-4.0.0 -I.    -O3 -fPIC conftest.c -L. -L/nix/store/svh0y2m2z99gldl7rfaf4zdphw0j6qpg-ruby-4.0.5/lib -Wl,-rpath,/nix/store/svh0y2m2z99gldl7rfaf4zdphw0j6qpg-ruby-4.0.5/lib -L. -fstack-protector-strong -rdynamic -Wl,-export-dynamic -Wl,--no-as-needed     -Wl,-rpath,/nix/store/svh0y2m2z99gldl7rfaf4zdphw0j6qpg-ruby-4.0.5/lib -L/nix/store/svh0y2m2z99gldl7rfaf4zdphw0j6qpg-ruby-4.0.5/lib -lruby-4.0.5  -lm -lpthread  -lc"
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: int main(int argc, char **argv)
+4: {
+5:   return !!argv[argc];
+6: }
+/* end */
+
+LD_LIBRARY_PATH=.:/nix/store/svh0y2m2z99gldl7rfaf4zdphw0j6qpg-ruby-4.0.5/lib LSAN_OPTIONS=detect_leaks=0 "gcc -o conftest -I/nix/store/svh0y2m2z99gldl7rfaf4zdphw0j6qpg-ruby-4.0.5/include/ruby-4.0.0/x86_64-linux -I/nix/store/svh0y2m2z99gldl7rfaf4zdphw0j6qpg-ruby-4.0.5/include/ruby-4.0.0/ruby/backward -I/nix/store/svh0y2m2z99gldl7rfaf4zdphw0j6qpg-ruby-4.0.5/include/ruby-4.0.0 -I.    -O3 -fPIC conftest.c -L. -L/nix/store/svh0y2m2z99gldl7rfaf4zdphw0j6qpg-ruby-4.0.5/lib -Wl,-rpath,/nix/store/svh0y2m2z99gldl7rfaf4zdphw0j6qpg-ruby-4.0.5/lib -L. -fstack-protector-strong -rdynamic -Wl,-export-dynamic -Wl,--no-as-needed -L/nix/store/zysg2m9jqvnjfh4r0cbdmwz65lxgxinx-graphicsmagick-1.3.47/lib -lGraphicsMagickWand -lGraphicsMagick    -Wl,-rpath,/nix/store/svh0y2m2z99gldl7rfaf4zdphw0j6qpg-ruby-4.0.5/lib -L/nix/store/svh0y2m2z99gldl7rfaf4zdphw0j6qpg-ruby-4.0.5/lib -lruby-4.0.5  -lm -lpthread  -lc"
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: int main(int argc, char **argv)
+4: {
+5:   return !!argv[argc];
+6: }
+/* end */
+
+LD_LIBRARY_PATH=.:/nix/store/svh0y2m2z99gldl7rfaf4zdphw0j6qpg-ruby-4.0.5/lib LSAN_OPTIONS=detect_leaks=0 pkg-config --cflags-only-I GraphicsMagickWand |
+=> "-I/nix/store/zysg2m9jqvnjfh4r0cbdmwz65lxgxinx-graphicsmagick-1.3.47/include/GraphicsMagick\n"
+LD_LIBRARY_PATH=.:/nix/store/svh0y2m2z99gldl7rfaf4zdphw0j6qpg-ruby-4.0.5/lib LSAN_OPTIONS=detect_leaks=0 pkg-config --cflags-only-other GraphicsMagickWand |
+=> "\n"
+LD_LIBRARY_PATH=.:/nix/store/svh0y2m2z99gldl7rfaf4zdphw0j6qpg-ruby-4.0.5/lib LSAN_OPTIONS=detect_leaks=0 pkg-config --libs-only-l GraphicsMagickWand |
+=> "-lGraphicsMagickWand -lGraphicsMagick\n"
+package configuration for GraphicsMagickWand
+incflags: -I/nix/store/zysg2m9jqvnjfh4r0cbdmwz65lxgxinx-graphicsmagick-1.3.47/include/GraphicsMagick
+cflags: 
+ldflags: -L/nix/store/zysg2m9jqvnjfh4r0cbdmwz65lxgxinx-graphicsmagick-1.3.47/lib
+libs: -lGraphicsMagickWand -lGraphicsMagick
+
+--------------------
+

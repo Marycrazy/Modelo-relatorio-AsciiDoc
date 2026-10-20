@@ -1,0 +1,55 @@
+
+:doctype: article
+:title-page:
+:icons: font
+:pdf-theme: ./resources/themes/estgoh-doc-theme.yml
+:pdf-fontsdir: ./resources/fonts
+:imagesdir: ./resources/images
+:source-highlighter: rouge
+:rouge-style: github
+:hardbreaks:
+:sectnums:
+:sectnumlevels: 3
+:toc:
+:toc-title: Índice
+:toclevels: 3
+:lof-title: Lista de Figuras
+:figure-caption: Figura
+:xrefstyle: short
+:include-lists-in-toc:
+
+= Trabalhos Laboratoriais a fazer
+Nome e número do(s) Aluno(s)
+:revdate: 2026/06/08
+:ano-letivo: 2026/27
+
+== Introdução
+xxx
+A <<fig-teste>> apresenta o resultado do teste realizado.
+
+[#fig-teste]
+.Resultado do teste realizado
+image::image.png[Resultado do teste, width=245, height=163]
+
+== Fichas Laboratoriais
+xxx
+
+=== Networking Today
+==== Initialize and Reload a Router and Switch
+xxx
+
+==== PT - Navigate the IOS
+xxx
+
+=== Basic Switch and End Device Configuration
+
+=== Protocols and Models
+
+=== Physical Layer
+
+=== Number Systems
+
+=== Data Link Layer
+xxx
+
+== Conclusão

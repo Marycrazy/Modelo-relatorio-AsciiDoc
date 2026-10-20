@@ -1,0 +1,19 @@
+current directory: /docs/ruby/.gems/gems/prawn-gmagick-0.0.9/ext/image
+/nix/store/svh0y2m2z99gldl7rfaf4zdphw0j6qpg-ruby-4.0.5/bin/ruby extconf.rb
+checking for pkg-config for GraphicsMagickWand... ["-I/nix/store/zysg2m9jqvnjfh4r0cbdmwz65lxgxinx-graphicsmagick-1.3.47/include/GraphicsMagick ", "-L/nix/store/zysg2m9jqvnjfh4r0cbdmwz65lxgxinx-graphicsmagick-1.3.47/lib", "-lGraphicsMagickWand -lGraphicsMagick"]
+creating Makefile
+
+current directory: /docs/ruby/.gems/gems/prawn-gmagick-0.0.9/ext/image
+make DESTDIR\= sitearchdir\=./.gem.20260608-154-tnkwnv sitelibdir\=./.gem.20260608-154-tnkwnv clean
+
+current directory: /docs/ruby/.gems/gems/prawn-gmagick-0.0.9/ext/image
+make DESTDIR\= sitearchdir\=./.gem.20260608-154-tnkwnv sitelibdir\=./.gem.20260608-154-tnkwnv
+compiling image.c
+linking shared-object image.so
+
+current directory: /docs/ruby/.gems/gems/prawn-gmagick-0.0.9/ext/image
+make DESTDIR\= sitearchdir\=./.gem.20260608-154-tnkwnv sitelibdir\=./.gem.20260608-154-tnkwnv install
+install -c -p -m 755 image.so ./.gem.20260608-154-tnkwnv
+
+current directory: /docs/ruby/.gems/gems/prawn-gmagick-0.0.9/ext/image
+make DESTDIR\= sitearchdir\=./.gem.20260608-154-tnkwnv sitelibdir\=./.gem.20260608-154-tnkwnv clean
