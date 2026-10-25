@@ -1,5 +1,6 @@
 # Color Scheme
 color:
+  black: '000000'
   primary: 2C3E50
   secondary: 7F8C8D
   accent: 2980B9
@@ -63,7 +64,7 @@ base:
   font-family: Lato
   font-size: 11pt
   line-height: 1.4
-  font-color: 000000
+  font-color: $color-black
   border-color: $color-border
   border-width: 0.5
   border-radius: 4
@@ -72,7 +73,7 @@ base:
 # Headings
 heading:
   font-style: bold
-  font-color: 000000
+  font-color: $color-black
 
   h1:
     font-size: 14pt
@@ -196,7 +197,7 @@ image:
     end: bottom
     font-family: Lato
     font-size: 10pt
-    font-color: 000000
+    font-color: $color-black
 
 # Tables
 table:
@@ -218,8 +219,8 @@ table:
 
 # Links
 link:
-  font-color: $color-accent
-  text-decoration: underline
+  font-color: $color-black
+  text-decoration: none
 
 
 # Lists
@@ -235,7 +236,7 @@ toc:
   title:
     font-size: 14pt
     font-style: bold
-    font-color: 000000
+    font-color: $color-black
     margin-bottom: 14pt
 
   h2:
@@ -248,17 +249,17 @@ title-page:
 
   title:
     font-size: 20pt
-    font-color: 000000
+    font-color: $color-black
     margin-bottom: 8pt
 
   subtitle:
     font-size: 14pt
-    font-color: 000000
+    font-color: $color-black
     margin-bottom: 12pt
 
   authors:
     font-size: 10pt
-    font-color: 000000
+    font-color: $color-black
     margin-bottom: 8pt
 
 # Header
@@ -290,41 +291,41 @@ title-page:
   school:
     font-family: Lato
     font-size: 19pt
-    font-color: 000000
+    font-color: $color-black
     font-style: bold
 
   course:
     font-family: Lato
     font-size: 15pt
-    font-color: 000000
+    font-color: $color-black
     font-style: bold
 
   subject:
     font-family: Lato
     font-size: 13pt
-    font-color: 000000
+    font-color: $color-black
     font-style: bold
 
   academic-year:
     font-family: Lato
     font-size: 11pt
-    font-color: 000000
+    font-color: $color-black
     font-style: bold
 
   title:
     font-family: Lato
     font-size: 14pt
-    font-color: 000000
+    font-color: $color-black
     font-style: bold
 
   date:
     font-family: Lato
     font-size: 10pt
-    font-color: 000000
+    font-color: $color-black
     font-style: bold
 
   authors:
     font-family: Lato
     font-size: 9pt
-    font-color: 000000
+    font-color: $color-black
     font-style: bold
