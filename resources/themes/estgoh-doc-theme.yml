@@ -190,6 +190,9 @@ codespan:
 # Figures
 image:
   align: center
+  border-color: $color-black
+  border-width: 0.5pt
+  border-style: solid
 
   caption:
     align: center
