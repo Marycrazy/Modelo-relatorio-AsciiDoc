@@ -66,6 +66,20 @@ class PDFConverterCustom < (Asciidoctor::Converter.for 'pdf')
         super
     end
 
+    
+    def convert_image node, **opts
+        unless opts[:pinned]
+            spacing = theme.image_margin_top
+
+            if spacing
+                margin_top spacing.to_f
+            end
+        end
+
+        super
+    end
+
+
     private
     
     def ink_title_page_logo
@@ -101,7 +115,7 @@ class PDFConverterCustom < (Asciidoctor::Converter.for 'pdf')
         move_down 35
 
         theme_font :title_page_subject do
-            ink_prose 'Gestão de Sistemas e Redes',
+            ink_prose 'Redes de Computadores 2',
                 align: :center, margin: 0
         end
 
